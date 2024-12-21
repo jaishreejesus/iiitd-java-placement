@@ -2,6 +2,7 @@ import java.util.*;
 public class Main {
     static Scanner sc = new Scanner(System.in);
     static Student testStudent = new Student();
+    static Placement testPlacement = new Placement();
 
     public static void mainApplication() {
         while (true) {
@@ -13,6 +14,7 @@ public class Main {
 
             int mainAppchoice = sc.nextInt();
             if (mainAppchoice == 1) {
+
 
             } else if (mainAppchoice == 2) {
 

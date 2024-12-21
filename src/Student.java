@@ -30,6 +30,12 @@ public class Student {
         return now.format(formatter);
     }
 
+    public static void studentMenu() {
+
+
+    }
+
+
 
 
 }
