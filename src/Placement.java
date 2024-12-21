@@ -1,11 +1,20 @@
 import java.util.Scanner;
 
 class PlacementDetails {
-    
+    boolean placementStatus = false;
+    public void openPlacementRegistration() {
+        placementStatus = true;
+        String currentDateTime = Student.returnDateTime();
+        System.out.print("Opening registration at: ");
+        System.out.println(currentDateTime);
+    }
 }
+
+
 public class Placement {
     static Scanner sc = new Scanner(System.in);
-    public static void placementMenu() {
+
+    public void placementMenu() {
         System.out.println("Welcome to IIITD Placement Cell");
         String samplePlacementText = "1) Open Student Registration"+
                 "\n2) Open Company Registration"+
@@ -17,9 +26,16 @@ public class Placement {
                 "\n8) Get Average Package"+
                 "\n9) Get Company Process Results"+
                 "\n10) Exit";
+
+        PlacementDetails testPlacement = new PlacementDetails();
+
         while (true) {
             System.out.println(samplePlacementText);
             int placChoice = sc.nextInt();
+
+            if (placChoice == 1) {
+                testPlacement.openPlacementRegistration();
+            }
 
         }
 
