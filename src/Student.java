@@ -3,12 +3,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 class StudentDetails {
-    String name;
-    String rollNo;
-    double cgpa;
-    String branch;
+    private String name;
+    private String rollNo;
+    private double cgpa;
+    private String branch;
 
-    String curentStatus = null;
+    private String curentStatus = null;
 
 
     StudentDetails(String name, String rollNo, double cgpa, String branch) {
@@ -18,7 +18,7 @@ class StudentDetails {
         this.branch = branch;
     }
 
-    String getCurentStatus() {
+    protected String getCurentStatus() {
         return curentStatus;
     }
 
@@ -32,7 +32,7 @@ public class Student {
         return now.format(formatter);
     }
 
-    public static void studentMenu() {
+    public void studentMenu() {
         System.out.println("Choose Student Query to perform");
         String studentText = "1) Enter as a Student(Student name, Student RollNo required)"+
                 "\n2) Add Students"+

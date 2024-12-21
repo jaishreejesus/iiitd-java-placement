@@ -14,8 +14,7 @@ public class Main {
 
             int mainAppchoice = sc.nextInt();
             if (mainAppchoice == 1) {
-
-
+                testStudent.studentMenu();
             } else if (mainAppchoice == 2) {
 
             } else if (mainAppchoice == 3) {
