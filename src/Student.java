@@ -10,7 +10,7 @@ class StudentDetails {
     double cgpa;
     String branch;
 
-    String curentStatus = null;
+    String currentStatus = null;
 
 
     StudentDetails(String name, String rollNo, double cgpa, String branch) {
@@ -23,7 +23,7 @@ class StudentDetails {
     StudentDetails() {}
 
     protected String getCurentStatus() {
-        return curentStatus;
+        return currentStatus;
     }
 }
 
@@ -42,7 +42,9 @@ public class Student {
         System.out.println("Choose Student Query to perform");
         String studentText = "1) Enter as a Student(Student name, Student RollNo required)"+
                 "\n2) Add Students"+
-                "\n3) Back to Main Menu";
+                "\n3) Display all students"+
+                "\n4) Exit to main menu";
+
         while (true) {
             System.out.println(studentText);
             int studentChoice = sc.nextInt();
@@ -65,28 +67,38 @@ public class Student {
                 }
 
             } else if (studentChoice == 2) {
+
                 System.out.println("How many students do you want to add?");
                 int numStudents = sc.nextInt();
                 String name = "", rollNo = "", branch = "";
                 double cgpa = 0;
                 for (int i = 0; i < numStudents; i++) {
-                    System.out.println("Enter Student Name");
+                    System.out.println("Enter Name of Student " + (i + 1));
                     name = sc.next();
-                    System.out.println("Enter Student RollNo");
+                    System.out.println("Enter RollNo of Student " + (i + 1));
                     rollNo = sc.next();
-                    System.out.println("Enter Student CGPA");
+                    System.out.println("Enter CGPA of Student " + (i + 1));
                     cgpa = sc.nextDouble();
-                    System.out.println("Enter Student Branch");
+                    System.out.println("Enter Branch of Student " + (i + 1));
                     branch = sc.next();
+                    allStudentList.add(new StudentDetails(name, rollNo, cgpa, branch));
                 }
-                StudentDetails tempStudent = new StudentDetails(name, rollNo, cgpa, branch);
-                allStudentList.add(tempStudent);
 
             } else if (studentChoice == 3) {
+
+                for (int i = 0; i < allStudentList.size(); i++) {
+                    System.out.println("Student Details: ");
+                    System.out.println("Name: " + allStudentList.get(i).name);
+                    System.out.println("RollNo: " + allStudentList.get(i).rollNo);
+                    System.out.println("CGPA: " + allStudentList.get(i).cgpa);
+                    System.out.println("Branch: " + allStudentList.get(i).branch);
+                    System.out.println("Current Status: " + allStudentList.get(i).getCurentStatus());
+                }
+            } else if (studentChoice == 4) {
                 break;
+                //System.out.println(allStudentList.size());
             } else {
                 System.out.println("Invalid choice");
-                continue;
             }
         }
     }
