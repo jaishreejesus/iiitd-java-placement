@@ -1,8 +1,10 @@
 import java.util.*;
+
 public class Main {
     static Scanner sc = new Scanner(System.in);
     static Student testStudent = new Student();
     static Placement testPlacement = new Placement();
+    static List<Student> allStudentList = new ArrayList<>();
 
     public static void mainApplication() {
         while (true) {
@@ -26,12 +28,17 @@ public class Main {
                 continue;
             }
         }
-
-
     }
 
-    public static void main(String[] args) {
+//    private void testFunction() {
+//        Student e = new Student();
+//        allStudentList.add(e);
+//        allStudentList.get(0).studentMenu();
+//    }
 
+
+    // @Main Function that invokes the entrance to a program
+    public static void main(String[] args) {
         while (true) {
             System.out.println("Welcome to FutureBuilder: ");
             System.out.println("1: Enter the application");
