@@ -12,7 +12,6 @@ class StudentDetails {
 
     String currentStatus = null;
 
-
     StudentDetails(String name, String rollNo, double cgpa, String branch) {
         this.name = name;
         this.rollNo = rollNo;
@@ -26,10 +25,8 @@ class StudentDetails {
         return currentStatus;
     }
 
-    void updateCGPA() {
-        System.out.println("Enter CGPA->(to be updated): ");
-        int newCG = Student.sc.nextInt();
-        cgpa = newCG;
+    void updateCGPA(double newCG) {
+        this.cgpa = newCG;
     }
 
 }
@@ -102,9 +99,18 @@ public class Student {
                     System.out.println("Current Status: " + allStudentList.get(i).getCurentStatus());
                 }
             } else if (studentChoice == 4) {
+                System.out.println("Enter the RollNo of the student to update CGPA: ");
+                double newCG = sc.nextDouble();
+                String rollNo = sc.next();
+                for (int i = 0; i < allStudentList.size(); i++) {
+                    if (allStudentList.get(i).rollNo.equals(rollNo)) {
+                        allStudentList.get(i).updateCGPA(newCG);
+                        break;
+                    }
+                }
+            } else if (studentChoice == 5) {
                 break;
-                //System.out.println(allStudentList.size());
-            } else {
+            }else {
                 System.out.println("Invalid choice");
             }
         }
