@@ -3,13 +3,12 @@ import java.util.Scanner;
 class PlacementDetails {
     boolean placementStatus = false;
     public void openPlacementRegistration() {
-        placementStatus = true;
+        this.placementStatus = true;
         String currentDateTime = Student.returnDateTime();
         System.out.print("Opening registration at: ");
         System.out.println(currentDateTime);
     }
 }
-
 
 public class Placement {
     static Scanner sc = new Scanner(System.in);
