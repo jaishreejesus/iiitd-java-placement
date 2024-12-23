@@ -25,12 +25,19 @@ class StudentDetails {
     protected String getCurentStatus() {
         return currentStatus;
     }
+
+    void updateCGPA() {
+        System.out.println("Enter CGPA->(to be updated): ");
+        int newCG = Student.sc.nextInt();
+        cgpa = newCG;
+    }
+
 }
 
 public class Student {
     static Scanner sc = new Scanner(System.in);
     StudentDetails testStudentDetails = new StudentDetails();
-    List<StudentDetails> allStudentList = new ArrayList<>();
+    static List<StudentDetails> allStudentList = new ArrayList<>();
 
     public static String returnDateTime() {
         LocalDateTime now = LocalDateTime.now();

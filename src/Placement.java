@@ -1,13 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 class PlacementDetails {
     boolean placementStatus = false;
+    boolean companyReg = false;
+
+
     public void openPlacementRegistration() {
         this.placementStatus = true;
         String currentDateTime = Student.returnDateTime();
         System.out.print("Opening registration at: ");
         System.out.println(currentDateTime);
     }
+
+    public void openCompanyRegistration() {
+        this.companyReg = true;
+        String currentDateTime = Student.returnDateTime();
+        System.out.print("Opening registration at: ");
+    }
+
 }
 
 public class Placement {
