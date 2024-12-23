@@ -4,7 +4,7 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
     static Student testStudent = new Student();
     static Placement testPlacement = new Placement();
-    static List<Student> allStudentList = new ArrayList<>();
+    static Company testCompany = new Company();
 
     public static void mainApplication() {
         while (true) {
@@ -18,23 +18,17 @@ public class Main {
             if (mainAppchoice == 1) {
                 testStudent.studentMenu();
             } else if (mainAppchoice == 2) {
-
+                testCompany.companyMenu();
             } else if (mainAppchoice == 3) {
-
+                testPlacement.placementMenu();
             } else if (mainAppchoice == 4) {
                 break;
             } else {
                 System.out.println("Invalid choice");
-                continue;
             }
         }
     }
 
-//    private void testFunction() {
-//        Student e = new Student();
-//        allStudentList.add(e);
-//        allStudentList.get(0).studentMenu();
-//    }
 
 
     // @Main Function that invokes the entrance to a program
