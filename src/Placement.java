@@ -19,7 +19,6 @@ class PlacementDetails {
         String currentDateTime = Student.returnDateTime();
         System.out.print("Opening registration at: ");
     }
-
 }
 
 public class Placement {
